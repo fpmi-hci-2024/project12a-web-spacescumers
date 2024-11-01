@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HelloService {
-  private apiUrl = 'http://localhost:8080/api/hello';
+  private apiUrl = 'https://project12a-backend-spacescumers.onrender.com/api/hello';
 
   constructor(private http: HttpClient) { }
 
