@@ -7,6 +7,6 @@ RUN npm run build --prod
 
 # Step 2: Use Nginx to serve the Angular application
 FROM nginx:alpine
-COPY --from=build /app/dist/online_calculator_front /usr/share/nginx/html
+COPY --from=build /app/dist/online-calculator/browser /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
