@@ -1,1 +1,19 @@
-<app-hello></app-hello>
+<div class="background-container">
+  <h1> <button class="button" routerLink="/">&#8962;</button></h1>
+  <div class="language-selector">
+    <select (change)="changeLanguage($event)">
+      <option value="by">Беларуская</option>
+      <option value="ru">Русский</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
+
+  <router-outlet></router-outlet>
+  <div class="language-selector">
+    <select (change)="changeLibrary($event)">
+      <option value="сpp">cpp</option>
+      <option value="java">java</option>
+    </select>
+  </div>
+</div>

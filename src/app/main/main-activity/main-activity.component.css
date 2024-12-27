@@ -1,0 +1,56 @@
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffa51e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.result-container {
+  margin-top: 20px;
+}
+
+.result-container p {
+  font-size: 18px;
+}
+
+.button-panel {
+  margin-top: 20px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+}
+
+.square-button {
+  width: 200px;
+  height: 50px;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.98);
+}

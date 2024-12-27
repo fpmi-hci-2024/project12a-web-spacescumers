@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="matrix-container">
+    <label>Matrix A</label>
+    <table>
+      <tr *ngFor="let row of matrixA; let i = index as number">
+        <td *ngFor="let cell of row; let j = index as number">
+          <input type="text" class="matrix-cell" [(ngModel)]="matrixA[i][j]">
+        </td>
+      </tr>
+    </table>
+    <div class="input-container">
+      <label for="rows">m: </label>
+      <input type="text" class="input-field" [(ngModel)]="rows">
+      <label for="cols">n: </label>
+      <input type="text" class="input-field" [(ngModel)]="cols">
+    </div>
+    <button class="button create-button" (click)="createMatrix()">Create Matrix A</button>
+  </div>
+
+  <div class="buttons-container">
+    <button *ngFor="let button of buttons" class="button action-button" (click)="handleButtonClick(button)">{{ button }}</button>
+  </div>
+
+  <div class="matrix-container">
+    <label>Matrix B</label>
+    <table>
+      <tr *ngFor="let row of matrixB; let i = index as number">
+        <td *ngFor="let cell of row; let j = index as number">
+          <input type="text" class="matrix-cell" [(ngModel)]="matrixB[i][j]">
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+<div class="result-container">
+  <label>Result:</label>
+  <span>{{ result }}</span>
+</div>

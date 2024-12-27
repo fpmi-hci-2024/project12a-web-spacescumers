@@ -1,22 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello/hello.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate/core";
+import {RouterModule} from "@angular/router";
+import {AuthModule} from "./auth/auth.module";
+import {MainModule} from "./main/main.module";
+import {AppRoutingModule} from "./app.routes";
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
-    AppComponent,
-    HelloComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot([]),
     AppRoutingModule,
-    HttpClientModule
+    AuthModule,
+    MainModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('by');
+    translate.use('by');
+  }
+}

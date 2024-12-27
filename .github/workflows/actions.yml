@@ -3,8 +3,7 @@ name: Build and Push Frontend
 on:
   push:
     branches:
-      - master
-      - development
+      - hci_prod
 
 jobs:
   build:
@@ -25,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: sva4rd/calculator-frontend:latest
+          tags: sva4rd/front-test:latest

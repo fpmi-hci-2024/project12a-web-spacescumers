@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+<div class="container">
+  <form (ngSubmit)="sign_in()">
+    <h2>{{ "signIn" | translate }}</h2>
+    <div class="input-group">
+      <label for="login">{{ "login" | translate }}</label>
+      <input type="text" id="login" name="login" [(ngModel)]="login" required>
+    </div>
+    <div class="input-group">
+      <label for="password">{{ "password" | translate }}</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <button type="submit">{{ "signIn" | translate }}</button>
+    <p>{{ "notHave" | translate }}<a routerLink="/registration">{{ "signUp" | translate }}</a></p>
+  </form>
+</div>
+</body>
+</html>

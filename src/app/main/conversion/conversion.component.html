@@ -1,0 +1,19 @@
+<div class="converter">
+  <h2>{{ "numberSystems" | translate }}</h2>
+  <div class="input-container">
+    <label>{{ "binary" | translate }}</label>
+    <input type="number" [(ngModel)]="binary" (input)="convertFromBinary()" />
+  </div>
+  <div class="input-container">
+    <label>{{ "eight" | translate }}</label>
+    <input type="number" [(ngModel)]="octal" (input)="convertFromOctal()" />
+  </div>
+  <div class="input-container">
+    <label>{{ "ten" | translate }}</label>
+    <input type="number" [(ngModel)]="decimal" (input)="convertFromDecimal()" />
+  </div>
+  <div class="input-container">
+    <label>{{ "sixteen" | translate }}</label>
+    <input type="text" [(ngModel)]="hexadecimal" (input)="convertFromHexadecimal()" />
+  </div>
+</div>
